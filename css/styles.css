@@ -41,6 +41,7 @@ img {
     background-color: #fff;
     border-radius: .5rem;
     overflow: hidden;
+    box-shadow: 0 4px 6px rgb(158, 175, 194, .1);
 }
 
 .card-img {
