@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  /* Font Families */
+  --ff-manrope: 'Manrope', sans-serif;
+
+  /* Colors */
+  --clr-white: #ffffff;
+  --clr-gray-200: #ECF2F8;
+  --clr-gray-400: #9DAEC2;
+  --clr-gray-500: #6E8098;
+  --clr-gray-900: #48556A;
+
+  /* Text Presets */
+  --txt-preset-1: 700 1.25rem / 1.3 var(--ff-manrope);
+  --txt-preset-2-bold: 700 .8125rem / 1.4 var(--ff-manrope);
+  --txt-preset-2-medium: 500 .8125rem / 1.4 var(--ff-manrope);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+html,
+body {
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.5;
+  font: var(--txt-preset-2-medium);
+  background-color: var(--clr-gray-200);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: none;
+  border: none;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: none;
+}
+
+/* End Reset */
+
+/* Globals */
+.container {
+  width: calc(100% - 3rem);
+}
+
+@media (min-width: 40rem) {
+  .container {
+    max-width: 38rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .container {
+    max-width: 45.625rem;
+  }
+}
+
+/* End Globals */
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 2rem 0;
+  background-color: var(--clr-white);
+  border-radius: .625rem;
+  box-shadow: 0 2.5rem 2.5rem -0.625rem rgba(201, 213, 225, .5);
+}
+
+.card__container {
+  position: relative;
+}
+
+@media (min-width: 40rem) {
+  .card__container {
+    display: grid;
+    grid-template-columns: 14.3125rem 1fr;
+  }
+}
+
+@media (min-width: 62rem) {
+  .card__container {
+    display: grid;
+    grid-template-columns: 17.8125rem 1fr;
+  }
+}
+
+.card__img-container {
+  width: 100%;
+  height: 12.5rem;
+  border-radius: .625rem .625rem 0 0;
+  overflow: hidden;
+}
+
+@media (min-width: 40rem) {
+  .card__img-container {
+    height: 100%;
+    border-radius: .625rem 0 0 .625rem;
+  }
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+}
+
+.card__content {
+  padding: 2rem 1.875rem 1.125rem;
+}
+
+@media (min-width: 40rem) {
+  .card__content {
+    padding: 2.5625rem 2.25rem 2.5625rem 2rem;
+  }
+}
+
+@media (min-width: 62rem) {
+  .card__content {
+    padding: 1.875rem 2.5rem;
+  }
+}
+
+.card__title {
+  font: var(--txt-preset-1);
+  letter-spacing: .0156rem;
+  color: var(--clr-gray-900);
+}
+
+.card__description {
+  margin-top: 1.5rem;
+  letter-spacing: .0075rem;
+  color: var(--clr-gray-500);
+}
+
+.card__footer {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 40rem) {
+  .card__footer {
+    margin-top: 1.5rem;
+  }
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card__author-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.card__author-name {
+  font: var(--txt-preset-2-bold);
+  letter-spacing: .0075rem;
+  color: var(--clr-gray-900);
+}
+
+.card__author-date {
+  letter-spacing: .0075rem;
+  color: var(--clr-gray-500);
+}
+
+.card__btn {
+  position: relative;
+  z-index: 3;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--clr-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+}
+
+.card__btn:focus {
+  outline: none;
+}
+
+.card__btn-img {
+  pointer-events: none;
+}
+
+.card__btn-img path {
+  transition: fill .2s ease-in-out;
+}
+
+.card__btn:hover,
+.card__btn--active {
+  background-color: var(--clr-gray-500);
+}
+
+.card__btn:hover .card__btn-img path,
+.card__btn--active .card__btn-img path {
+  fill: var(--clr-white);
+}
+
+.pop-up {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--clr-gray-900);
+  padding: 1.75rem 1.875rem;
+  border-radius: 0 0 .625rem .625rem;
+}
+
+@media (min-width: 40rem) {
+  .pop-up {
+    transition: all .3s ease-in-out;
+    left: unset;
+    right: -4.5rem;
+    bottom: 6.625rem;
+    border-radius: .625rem;
+    padding: 1.125rem 2.375rem;
+    box-shadow: 0 .625rem .625rem rgba(201, 213, 225, .5);
+  }
+}
+
+@media (min-width: 40rem) {
+  .pop-up {
+    right: -4.1875rem;
+    bottom: 6rem;
+  }
+}
+
+.pop-up--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.pop-up__container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .pop-up__container {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  .pop-up__container::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid var(--clr-gray-900);
+    position: absolute;
+    bottom: -0.75rem;
+  }
+}
+
+.pop-up__title {
+  font-size: .8125rem;
+  line-height: 1.4;
+  letter-spacing: .1875rem;
+  text-transform: uppercase;
+  color: var(--clr-gray-400);
+}
+
+.pop-up__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pop-up__social {
+  display: flex;
+}
+
+.pop-up__social-img {
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .pop-up__social:hover path {
+    fill: var(--clr-gray-200);
+  }
+}
